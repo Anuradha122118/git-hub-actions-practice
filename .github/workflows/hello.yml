@@ -11,14 +11,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Step 1 - Print message
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print message
         run: echo "Hello Anuradha!"
 
-      - name: Step 2 - Check current directory
+      - name: Show current directory
         run: pwd
 
-      - name: Step 3 - List files
+      - name: List repository files
         run: ls -la
 
-      - name: Step 4 - Check operating system
-        run: uname -a
+      - name: Display README
+        run: cat README.md
