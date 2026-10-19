@@ -1,3 +1,4 @@
+
 name: My First Workflow
 
 on:
@@ -10,5 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print a message
-        run: echo "Hello Anuradha! My first GitHub Actions workflow is working."
+      - name: Step 1 - Print message
+        run: echo "Hello Anuradha!"
+
+      - name: Step 2 - Check current directory
+        run: pwd
+
+      - name: Step 3 - List files
+        run: ls -la
+
+      - name: Step 4 - Check operating system
+        run: uname -a
