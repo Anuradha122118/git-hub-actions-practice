@@ -1,5 +1,4 @@
-
-name: My First Workflow
+name: GitHub Actions Practice
 
 on:
   push:
@@ -7,21 +6,18 @@ on:
       - main
 
 jobs:
-  hello:
+  demo:
     runs-on: ubuntu-latest
 
+    env:
+      APP_NAME: myapp
+      ENVIRONMENT: testing
+
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Print message
-        run: echo "Hello Anuradha!"
-
-      - name: Show current directory
-        run: pwd
-
-      - name: List repository files
-        run: ls -la
-
-      - name: Display README
-        run: cat README.md
+      - name: Display environment variables
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
