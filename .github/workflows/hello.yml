@@ -21,3 +21,14 @@ jobs:
         run: |
           echo "Application: $APP_NAME"
           echo "Environment: $ENVIRONMENT"
+          
+      - name: Use GitHub Secret
+        env:
+          MY_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          if [ -n "$MY_SECRET" ]; then
+            echo "Secret is configured successfully"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
